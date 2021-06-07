@@ -4,6 +4,7 @@
 #include <memory>
 #include <utility>
 
+
 // family of related algorithms as interfaces
 class IQuackBehavior
 {
@@ -106,7 +107,7 @@ public:
 
 
 // the "Strategy" object
-// regular classes use the algorithms they need and can vary them at runtime 
+// it uses the algorithms it need and can vary them at runtime 
 class Duck
 {
 	// this object supports the following behavioral algorithms:
@@ -144,16 +145,15 @@ public:
 	{
 		if ( this != &rhs )
 		{
-			Duck temp( std::move( rhs ) );
-			std::swap( this->m_disp, temp.m_disp );
-			std::swap( this->m_quack, temp.m_quack );
-			std::swap( this->m_fly, temp.m_fly );
-			this->m_weight = temp.m_weight;
+			std::swap( this->m_disp, rhs.m_disp );
+			std::swap( this->m_quack, rhs.m_quack );
+			std::swap( this->m_fly, rhs.m_fly );
+			this->m_weight = rhs.m_weight;
 		}
 		return *this;
 	}
 
-	void showcaseObject() const
+	void showcase() const
 	{
 		m_disp->display();
 		m_quack->quack();

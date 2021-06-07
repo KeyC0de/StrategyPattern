@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="leak_checker.h" />
     <ClInclude Include="strategy.h" />
+    <ClInclude Include="winner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
