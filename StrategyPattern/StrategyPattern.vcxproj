@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="leak_checker.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="strategy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="leak_checker.h" />
