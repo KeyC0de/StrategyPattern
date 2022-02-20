@@ -31,6 +31,7 @@ public:
 	virtual void display() = 0;
 };
 
+
 // implementations of the interfaces
 class SimpleFly
 	: public IFlyBehavior
@@ -81,7 +82,6 @@ public:
 // it uses the algorithms it needs and can switch between them at runtime 
 class Duck
 {
-	// this object supports the following behavioral algorithms:
 	std::unique_ptr<IDisplayBehavior> m_pDisplay;
 	std::unique_ptr<IQuackBehavior> m_pQuack;
 	std::unique_ptr<IFlyBehavior> m_pFly;

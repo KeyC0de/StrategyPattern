@@ -11,6 +11,8 @@ int main()
 	duck2 = Duck( new TextDisplay(), new NoQuack(), new SimpleFly() );
 	duck2.showcase();
 
-	std::system( "pause" );
-	return 0;
+#if defined _DEBUG && !defined NDEBUG
+	while ( !getchar() );
+#endif
+	return EXIT_SUCCESS;
 }

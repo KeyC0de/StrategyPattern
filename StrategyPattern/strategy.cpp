@@ -79,14 +79,19 @@ Duck::~Duck()
 	std::cout << "The duck is gone!\n";
 }
 
+//Duck::Duck( Duck&& rhs ) noexcept
+//	:
+//	m_pDisplay{std::move( rhs.m_pDisplay )},
+//	m_pQuack{std::move( rhs.m_pQuack )},
+//	m_pFly{std::move( rhs.m_pFly )},
+//	m_weight(rhs.m_weight)
+//{
+//
+//}
+// or delete to the maop:
 Duck::Duck( Duck&& rhs ) noexcept
-	:
-	m_pDisplay{std::move( rhs.m_pDisplay )},
-	m_pQuack{std::move( rhs.m_pQuack )},
-	m_pFly{std::move( rhs.m_pFly )},
-	m_weight(rhs.m_weight)
 {
-
+	*this = std::move( rhs );
 }
 
 Duck& Duck::operator=( Duck&& rhs ) noexcept
